@@ -55,7 +55,7 @@ namespace PlainElastic.Net.Tests.Serialization
             result.facets["histo1"]._type.ShouldEqual("histogram");
 
         It should_deserialize_facet_to_HistogramFacetResult_type = () =>
-            result.facets["histo1"].ShouldBeOfType<HistogramFacetResult>();
+            result.facets["histo1"].ShouldBeAssignableTo<HistogramFacetResult>();
 
         It should_contain_facet_with_correct_key_value = () =>
             result.facets["histo1"].As<HistogramFacetResult>().entries[0].key.ShouldEqual(10);

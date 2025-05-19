@@ -66,7 +66,7 @@ namespace PlainElastic.Net.Tests.Serialization
             result.facets["quantity"]._type.ShouldEqual("range");
 
         It should_deserialize_quantity_facet_to_RanfgeFacetResults_type = () =>
-            result.facets["quantity"].ShouldBeOfType<RangeFacetResult>();
+            result.facets["quantity"].ShouldBeAssignableTo<RangeFacetResult>();
 
         It should_contain_quantity_facet_with_correct_from_value = () =>
             result.facets["quantity"].As<RangeFacetResult>().ranges[1].from.ShouldEqual(20);

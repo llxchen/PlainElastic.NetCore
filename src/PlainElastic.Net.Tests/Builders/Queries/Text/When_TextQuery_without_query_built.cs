@@ -3,10 +3,10 @@ using PlainElastic.Net.Queries;
 
 namespace PlainElastic.Net.Tests.Builders.Queries
 {
-    [Subject(typeof(TextQuery<>))]
+    [Subject(typeof(MatchQuery<>))]
     class When_TextQuery_without_query_built
     {
-        Because of = () => result = new TextQuery<FieldsTestClass>()
+        Because of = () => result = new MatchQuery<FieldsTestClass>()
                                                 .Field(f => f.StringProperty)
                                                 .Boost(5)
                                                 .Type(TextQueryType.phrase)

@@ -71,7 +71,7 @@ namespace PlainElastic.Net.Tests.Serialization
             result.facets["TestTerms"]._type.ShouldEqual("terms");
 
         It should_deserialize_TestTerms_facet_to_TermsFacetResults_type = () =>
-            result.facets["TestTerms"].ShouldBeOfType<TermsFacetResult>();
+            result.facets["TestTerms"].ShouldBeAssignableTo<TermsFacetResult>();
 
         It should_contain_TestTerms_facet_with_correct_total_count = () =>
             result.facets["TestTerms"].As<TermsFacetResult>().total.ShouldEqual(6000);

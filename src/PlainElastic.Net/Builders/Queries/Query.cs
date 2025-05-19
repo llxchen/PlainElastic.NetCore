@@ -79,7 +79,7 @@ namespace PlainElastic.Net.Queries
 
         /// <summary>
         /// A query that can be used to effectively demote results that match a given query. 
-        /// Unlike the “NOT” clause in bool query, this still selects documents 
+        /// Unlike the “NOT?clause in bool query, this still selects documents 
         /// that contain undesirable terms, but reduces their overall score.
         /// see: http://www.elasticsearch.org/guide/reference/query-dsl/boosting-query.html
         /// </summary>
@@ -138,7 +138,7 @@ namespace PlainElastic.Net.Queries
         }
 
         /// <summary>
-        /// Fuzzy like this query find documents that are “like” provided text by running it against one or more fields.
+        /// Fuzzy like this query find documents that are “like?provided text by running it against one or more fields.
         /// see http://www.elasticsearch.org/guide/reference/query-dsl/flt-query.html
         /// </summary>
         public Query<T> FuzzyLikeThis(Func<FuzzyLikeThisQuery<T>, FuzzyLikeThisQuery<T>> fuzzyLikeThisQuery)
@@ -161,7 +161,7 @@ namespace PlainElastic.Net.Queries
         }
 
         /// <summary>
-        /// More like this query find documents that are “like” provided text by running it against one or more fields.
+        /// More like this query find documents that are “like?provided text by running it against one or more fields.
         /// see http://www.elasticsearch.org/guide/reference/query-dsl/mlt-query.html
         /// </summary>
         public Query<T> MoreLikeThis(Func<MoreLikeThisQuery<T>, MoreLikeThisQuery<T>> moreLikeThisQuery)

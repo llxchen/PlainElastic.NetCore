@@ -75,7 +75,7 @@ namespace PlainElastic.Net.Tests.Serialization
             result.facets["TestTermsStats"]._type.ShouldEqual("terms_stats");
 
         It should_deserialize_TermsStats_facet_to_TermsStatsFacetResults_type = () =>
-            result.facets["TestTermsStats"].ShouldBeOfType<TermsStatsFacetResult>();
+            result.facets["TestTermsStats"].ShouldBeAssignableTo<TermsStatsFacetResult>();
 
         It should_contain_TermsStats_facet_with_correct_missing_count = () =>
             result.facets["TestTermsStats"].As<TermsStatsFacetResult>().missing.ShouldEqual(1);

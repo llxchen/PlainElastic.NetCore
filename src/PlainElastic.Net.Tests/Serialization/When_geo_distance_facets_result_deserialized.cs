@@ -66,7 +66,7 @@ namespace PlainElastic.Net.Tests.Serialization
             result.facets["geo1"]._type.ShouldEqual("geo_distance");
 
         It should_deserialize_geo1_facet_to_GeoDistanceFacetResult_type = () =>
-            result.facets["geo1"].ShouldBeOfType<GeoDistanceFacetResult>();
+            result.facets["geo1"].ShouldBeAssignableTo<GeoDistanceFacetResult>();
 
         It should_contain_facet_with_correct_from_value = () =>
             result.facets["geo1"].As<GeoDistanceFacetResult>().ranges[1].from.ShouldEqual(100);

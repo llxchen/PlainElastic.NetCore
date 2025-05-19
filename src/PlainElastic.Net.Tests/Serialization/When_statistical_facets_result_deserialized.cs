@@ -59,7 +59,7 @@ namespace PlainElastic.Net.Tests.Serialization
             result.facets["stats1"]._type.ShouldEqual("statistical");
 
         It should_deserialize_Statistical_facet_to_StatisticalFacetResult_type = () =>
-            result.facets["stats1"].ShouldBeOfType<StatisticalFacetResult>();
+            result.facets["stats1"].ShouldBeAssignableTo<StatisticalFacetResult>();
 
         It should_contain_Statistical_facet_with_correct_total = () =>
             result.facets["stats1"].As<StatisticalFacetResult>().total.ShouldEqual(7921.61);

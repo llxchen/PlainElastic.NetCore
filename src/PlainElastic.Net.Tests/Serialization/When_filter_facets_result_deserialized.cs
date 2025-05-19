@@ -50,7 +50,7 @@ namespace PlainElastic.Net.Tests.Serialization
             result.facets["Segment"]._type.ShouldEqual("filter");
 
         It should_deserialize_Segment_facet_to_FilterFacetResults_type = () =>
-            result.facets["Segment"].ShouldBeOfType<FilterFacetResult>();
+            result.facets["Segment"].ShouldBeAssignableTo<FilterFacetResult>();
 
         It should_contain_Segment_facet_with_correct_hit_count = () =>
             result.facets["Segment"].As<FilterFacetResult>().count.ShouldEqual(1000);
@@ -59,7 +59,7 @@ namespace PlainElastic.Net.Tests.Serialization
             result.facets["Family"]._type.ShouldEqual("filter");
 
         It should_deserialize_Family_facet_to_FilterFacetResults_type = () =>
-            result.facets["Family"].ShouldBeOfType<FilterFacetResult>();
+            result.facets["Family"].ShouldBeAssignableTo<FilterFacetResult>();
 
         It should_contain_Family_facet_with_correct_hit_count = () =>
             result.facets["Family"].As<FilterFacetResult>().count.ShouldEqual(2000);  

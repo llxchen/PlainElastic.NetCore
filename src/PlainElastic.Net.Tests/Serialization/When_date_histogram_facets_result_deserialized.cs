@@ -56,7 +56,7 @@ namespace PlainElastic.Net.Tests.Serialization
             result.facets["histo1"]._type.ShouldEqual("date_histogram");
 
         It should_deserialize_facet_to_DateHistogramFacetResult_type = () =>
-            result.facets["histo1"].ShouldBeOfType<DateHistogramFacetResult>();
+            result.facets["histo1"].ShouldBeAssignableTo<DateHistogramFacetResult>();
 
         It should_contain_facet_with_correct_key_value = () =>
             result.facets["histo1"].As<DateHistogramFacetResult>().entries[0].time.ShouldEqual(1262304000000);

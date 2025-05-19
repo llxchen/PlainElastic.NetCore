@@ -4,10 +4,10 @@ using PlainElastic.Net.Utils;
 
 namespace PlainElastic.Net.Tests.Builders.Queries
 {
-    [Subject(typeof(TextQuery<>))]
+    [Subject(typeof(MatchQuery<>))]
     class When_complete_TextQuery_built
     {
-        Because of = () => result = new TextQuery<FieldsTestClass>()
+        Because of = () => result = new MatchQuery<FieldsTestClass>()
                                                 .Field(f => f.StringProperty)
                                                 .Query("One")
                                                 .Boost(5)
