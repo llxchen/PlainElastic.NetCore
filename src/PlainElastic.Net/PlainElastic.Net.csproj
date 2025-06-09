@@ -1,71 +1,74 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <OutputType>Library</OutputType>
-    <AssemblyName>PlainElastic.NetCore</AssemblyName>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
-    <AssemblyTitle>PlainElastic.Net</AssemblyTitle>
-    <Description>Plain ElasticSearch .Net client.</Description>
-    <Product>PlainElastic.Net</Product>
-    <Copyright>Copyright © Alexander Yegorov 2015</Copyright>
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>
-    <FileVersion>2.0.0.0</FileVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DocumentationFile>bin\Debug\Net40\PlainElastic.NetCore.xml</DocumentationFile>
-    <NoWarn>1591</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DocumentationFile>bin\Release\Net40\PlainElastic.NetCore.xml</DocumentationFile>
-    <NoWarn>1591</NoWarn>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Update="Builders\Queries\Filters\NoMatchFilter.cs">
-      <DependentUpon>IndicesFilter.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Builders\Queries\NoMatchQuery.cs">
-      <DependentUpon>IndicesQuery.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Builders\Queries\NegativeQuery.cs">
-      <DependentUpon>BoostingQuery.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Builders\Queries\PositiveQuery.cs">
-      <DependentUpon>BoostingQuery.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Builders\Queries\ScoredFilter.cs">
-      <DependentUpon>CustomFiltersScoreQuery.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Builders\Queries\ScoredFilters.cs">
-      <DependentUpon>CustomFiltersScoreQuery.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Builders\Queries\Filters\ShouldFilter.cs">
-      <DependentUpon>BoolFilter.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Builders\Queries\Filters\MustNotFilter.cs">
-      <DependentUpon>BoolFilter.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Builders\Queries\Filters\MustFilter.cs">
-      <DependentUpon>BoolFilter.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Builders\Queries\RangeBase.cs">
-      <DependentUpon>RangeQuery.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Builders\Queries\NestedBase.cs">
-      <DependentUpon>NestedQuery.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Builders\Queries\DisMaxQuery.cs">
-      <DependentUpon>DisMaxQueries.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Builders\Queries\MustNotQuery.cs">
-      <DependentUpon>BoolQuery.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Builders\Queries\MustQuery.cs">
-      <DependentUpon>BoolQuery.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Builders\Queries\ShouldQuery.cs">
-      <DependentUpon>BoolQuery.cs</DependentUpon>
-    </Compile>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<OutputType>Library</OutputType>
+		<AssemblyName>PlainElastic.NetCore</AssemblyName>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+		<AssemblyTitle>PlainElastic.Net</AssemblyTitle>
+		<Description>Plain ElasticSearch .NetCore client. 基于Github上的Plain ElasticSerch.Net升级</Description>
+		<Product>PlainElastic.Net</Product>
+		<Copyright>Copyright © Alexander Yegorov 2015</Copyright>
+		<PackageId>PlainElastic.NetCore</PackageId>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageVersion>1.0.0.0</PackageVersion>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<FileVersion>1.0.0.0</FileVersion>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DocumentationFile>bin\Debug\Net40\PlainElastic.NetCore.xml</DocumentationFile>
+		<NoWarn>1591</NoWarn>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DocumentationFile>bin\Release\Net40\PlainElastic.NetCore.xml</DocumentationFile>
+		<NoWarn>1591</NoWarn>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Update="Builders\Queries\Filters\NoMatchFilter.cs">
+			<DependentUpon>IndicesFilter.cs</DependentUpon>
+		</Compile>
+		<Compile Update="Builders\Queries\NoMatchQuery.cs">
+			<DependentUpon>IndicesQuery.cs</DependentUpon>
+		</Compile>
+		<Compile Update="Builders\Queries\NegativeQuery.cs">
+			<DependentUpon>BoostingQuery.cs</DependentUpon>
+		</Compile>
+		<Compile Update="Builders\Queries\PositiveQuery.cs">
+			<DependentUpon>BoostingQuery.cs</DependentUpon>
+		</Compile>
+		<Compile Update="Builders\Queries\ScoredFilter.cs">
+			<DependentUpon>CustomFiltersScoreQuery.cs</DependentUpon>
+		</Compile>
+		<Compile Update="Builders\Queries\ScoredFilters.cs">
+			<DependentUpon>CustomFiltersScoreQuery.cs</DependentUpon>
+		</Compile>
+		<Compile Update="Builders\Queries\Filters\ShouldFilter.cs">
+			<DependentUpon>BoolFilter.cs</DependentUpon>
+		</Compile>
+		<Compile Update="Builders\Queries\Filters\MustNotFilter.cs">
+			<DependentUpon>BoolFilter.cs</DependentUpon>
+		</Compile>
+		<Compile Update="Builders\Queries\Filters\MustFilter.cs">
+			<DependentUpon>BoolFilter.cs</DependentUpon>
+		</Compile>
+		<Compile Update="Builders\Queries\RangeBase.cs">
+			<DependentUpon>RangeQuery.cs</DependentUpon>
+		</Compile>
+		<Compile Update="Builders\Queries\NestedBase.cs">
+			<DependentUpon>NestedQuery.cs</DependentUpon>
+		</Compile>
+		<Compile Update="Builders\Queries\DisMaxQuery.cs">
+			<DependentUpon>DisMaxQueries.cs</DependentUpon>
+		</Compile>
+		<Compile Update="Builders\Queries\MustNotQuery.cs">
+			<DependentUpon>BoolQuery.cs</DependentUpon>
+		</Compile>
+		<Compile Update="Builders\Queries\MustQuery.cs">
+			<DependentUpon>BoolQuery.cs</DependentUpon>
+		</Compile>
+		<Compile Update="Builders\Queries\ShouldQuery.cs">
+			<DependentUpon>BoolQuery.cs</DependentUpon>
+		</Compile>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
 </Project>
